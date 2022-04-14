@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Models\Product;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,7 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/products',function (){
-   return 'products';
+
+});
+
+Route::post('/product',function (){
+
 });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
