@@ -20,6 +20,9 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
+       $request->validate([
+
+       ]);
         return product::create([
             'name' => $request->name,
             'slug' => $request->slug,
