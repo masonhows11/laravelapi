@@ -21,14 +21,13 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         return product::create([
-            'name' => 'Product one',
-            'slug' => 'Product-one',
-            'description' => 'this is product one',
-            'price' => '99.99',
-
+            'name' => $request->name,
+            'slug' => $request->slug,
+            'description' => $request->description,
+            'price' => $request->price,
         ]);
     }
-    
+
 
     public function update(Request $request, $id)
     {
