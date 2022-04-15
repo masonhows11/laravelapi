@@ -15,14 +15,18 @@ class ProductController extends Controller
 
     public function product($id)
     {
-
     }
 
     public function store(Request $request)
     {
-       $request->validate([
+        $request->validate([
 
-       ]);
+            'name' => 'required',
+            'slug' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+
+        ]);
         return product::create([
             'name' => $request->name,
             'slug' => $request->slug,
@@ -34,12 +38,9 @@ class ProductController extends Controller
 
     public function update(Request $request, $id)
     {
-
     }
 
     public function destroy($id)
     {
-
     }
-
 }
