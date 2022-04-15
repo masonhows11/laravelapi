@@ -13,8 +13,10 @@ class ProductController extends Controller
         return product::all();
     }
 
-    public function product($id)
+    public function show($id)
     {
+
+        return Product::find($id);
     }
 
     public function store(Request $request)

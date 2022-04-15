@@ -13,9 +13,12 @@ use App\Http\Controllers\ProductController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::get('/products',[ProductController::class,'index']);
 
-Route::post('/product',[ProductController::class,'store']);
+Route::get('/products', [ProductController::class, 'index']);
+
+Route::post('/product', [ProductController::class, 'store']);
+
+Route::get('/show/{id}', [ProductController::class, 'show']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
