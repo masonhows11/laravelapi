@@ -18,10 +18,7 @@ use App\Http\Controllers\AuthController;
 ////////////// public user routes
 Route::post('/user/create',[AuthController::class,'register']);
 
-Route::get('/user/login',[AuthController::class,'login']);
-
-
-
+Route::post('/user/login',[AuthController::class,'login']);
 
 ////////////// public product routes
 Route::get('/products', [ProductController::class, 'index']);
@@ -38,7 +35,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('/update/{id}',[ProductController::class,'update']);
 
     Route::get('/destroy/{id}',[ProductController::class,'destroy']);
-    
+
     Route::get('/user/logout',[AuthController::class,'logOut']);
 
 });
