@@ -14,18 +14,24 @@ use App\Http\Controllers\ProductController;
 |
 */
 
+////////////// public routes
 Route::get('/products', [ProductController::class, 'index']);
-
-Route::post('/product', [ProductController::class, 'store']);
 
 Route::get('/show/{id}', [ProductController::class, 'show']);
 
-Route::post('/update/{id}',[ProductController::class,'update']);
-
-Route::get('/destroy/{id}',[ProductController::class,'destroy']);
-
 Route::get('/search/{slug}',[ProductController::class,'search']);
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+////////////// protected routes
+Route::middleware(['auth:sanctum'])->group(function () {
+
+    Route::post('/store', [ProductController::class, 'store']);
+
+    Route::post('/update/{id}',[ProductController::class,'update']);
+
+    Route::get('/destroy/{id}',[ProductController::class,'destroy']);
+
 });
+
+/*Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
+});*/
