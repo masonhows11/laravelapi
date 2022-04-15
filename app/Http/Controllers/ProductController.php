@@ -52,7 +52,7 @@ class ProductController extends Controller
         $product = Product::find($id);
         $product->update($request->all());
         return $product;
-        
+
        /* return product::where('id',$id)->update([
             'name' => $request->name,
             'slug' => $request->slug,
@@ -63,5 +63,11 @@ class ProductController extends Controller
 
     public function destroy($id)
     {
+        return Product::destroy($id);
+    }
+
+    public function search($slug)
+    {
+        return Product::where('slug','like','%'.$slug.'%')->get();
     }
 }
