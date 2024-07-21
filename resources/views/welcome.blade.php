@@ -17,12 +17,13 @@
         <style>
             body {
                 font-family: 'Nunito', sans-serif;
+                background-color: #2d3748;
             }
         </style>
     </head>
     <body class="antialiased">
     <div style="text-align: center">
-        <h1>this app for test api in laravel</h1>
+        <h1 style="color: #f7fafc">this app for test api in laravel</h1>
     </div>
     </body>
 </html>
