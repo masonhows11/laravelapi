@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Models\Product;
+use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
@@ -15,8 +16,17 @@ class ProductController extends Controller
 
     public function show($id)
     {
-
         return Product::find($id);
+    }
+
+    public function feature()
+    {
+        
+    }
+
+    public function sponsor()
+    {
+        
     }
 
     public function store(Request $request)
