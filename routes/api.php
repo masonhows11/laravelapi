@@ -48,8 +48,8 @@ use Illuminate\Support\Facades\Route;
 // product routes
 Route::get('/products',[ProductController::class,'index'])->name('get.products');
 Route::get('/product/{id}',[ProductController::class,'show'])->name('get.product');
-
 Route::get('/products/feature',[ProductController::class,'feature'])->name('get.product.features');
+//
 Route::get('/products/sponsor',[SponsorController::class,'sponsor'])->name('get.product.sponsor');
 // comment routes
 Route::get('/comments/{product_id}',[CommentController::class,'index'])->name('get.product.comments');
