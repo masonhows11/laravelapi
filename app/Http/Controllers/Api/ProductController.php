@@ -18,18 +18,16 @@ class ProductController extends Controller
 
     public function show($id)
     {
-        return Product::find($id);
+        // return Product::find($id);
+        return response()->json(['message' => '200','data' =>  Product::findOrFail($id)],200);
     }
 
     public function feature()
     {
-
+        return response()->json(['message' => '200','data' =>  Product::where('is_featured',1)->get()],200);
     }
 
-    public function sponsor()
-    {
 
-    }
 
     public function store(Request $request)
     {

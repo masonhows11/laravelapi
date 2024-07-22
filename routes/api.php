@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\CommentController;
 use App\Http\Controllers\Api\ProductController;
+use App\Http\Controllers\Api\SponsorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -46,10 +47,10 @@ use Illuminate\Support\Facades\Route;
 
 // product routes
 Route::get('/products',[ProductController::class,'index'])->name('get.products');
-Route::get('/product/{$id}',[ProductController::class,'show'])->name('get.product');
+Route::get('/product/{id}',[ProductController::class,'show'])->name('get.product');
 
-Route::get('/product/feature',[ProductController::class,'feature'])->name('get.product.features');
-Route::get('/product/sponsor',[ProductController::class,'sponsor'])->name('get.product.sponsor');
+Route::get('/products/feature',[ProductController::class,'feature'])->name('get.product.features');
+Route::get('/products/sponsor',[SponsorController::class,'sponsor'])->name('get.product.sponsor');
 // comment routes
-Route::get('/comments/{$product_id}',[CommentController::class,'index'])->name('get.product.comments');
-Route::post('/comment/{$product_id}',[CommentController::class,'store'])->name('add.product.comments');
+Route::get('/comments/{product_id}',[CommentController::class,'index'])->name('get.product.comments');
+Route::post('/comment/{product_id}',[CommentController::class,'store'])->name('add.product.comments');
