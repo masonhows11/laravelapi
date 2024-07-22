@@ -11,7 +11,9 @@ class ProductController extends Controller
     //
     public function index()
     {
-        return product::all();
+      //  return product::all();
+      //  return response()->json(['message' => '200','data' =>  product::all()],200);
+        return response()->json(['message' => '200','data' =>  product::all()],200);
     }
 
     public function show($id)
@@ -21,12 +23,12 @@ class ProductController extends Controller
 
     public function feature()
     {
-        
+
     }
 
     public function sponsor()
     {
-        
+
     }
 
     public function store(Request $request)
